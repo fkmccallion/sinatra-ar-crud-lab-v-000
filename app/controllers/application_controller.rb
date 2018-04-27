@@ -34,6 +34,12 @@ class ApplicationController < Sinatra::Base
 
     erb :show
   end
+  
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+
+    erb :edit
+  end
 
   post '/posts/:id' do
     binding.pry
@@ -42,12 +48,6 @@ class ApplicationController < Sinatra::Base
 
 
     erb :show
-  end
-
-  get '/posts/:id/edit' do
-    @post = Post.find(params[:id])
-
-    erb :edit
   end
 
 end
