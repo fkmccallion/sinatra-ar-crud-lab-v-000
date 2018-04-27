@@ -37,6 +37,8 @@ class ApplicationController < Sinatra::Base
 
   post '/posts/:id' do
     binding.pry
+
+    erb :show
   end
 
   get '/posts/:id/edit' do
