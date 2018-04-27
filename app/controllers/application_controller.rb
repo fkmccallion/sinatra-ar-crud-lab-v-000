@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
 
   get '/posts' do
     @posts = Posts.all
-  
+    binding.pry
     erb :index
   end
 
