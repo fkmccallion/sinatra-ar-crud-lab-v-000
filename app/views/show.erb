@@ -1,4 +1,7 @@
-<% #binding.pry %>
 Post Name: <%= @post[:name] %>
 <br />
 Post Content: <%= @post[:content] %>
+
+<form value="/posts/<%= @post[:id] %>" method="post">
+  <input type="submit" value="delete"></input>
+</form>
