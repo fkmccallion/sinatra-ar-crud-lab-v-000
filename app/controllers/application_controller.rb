@@ -35,12 +35,6 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  get '/posts/:id/edit' do
-    @post = Post.find(params[:id])
-
-    erb :edit
-  end
-
   post '/posts/:id' do
     binding.pry
     Post.update(params[:id], :name => params[:name], :content => params[:content])
@@ -49,5 +43,13 @@ class ApplicationController < Sinatra::Base
 
     erb :show
   end
+
+  get '/posts/:id/edit' do
+    @post = Post.find(params[:id])
+
+    erb :edit
+  end
+
+
 
 end
