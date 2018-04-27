@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/posts' do
-    @posts = []
+    @posts = [] # all @posts variables sent to index.erb should be array to be iterated through
     @posts << Post.create(name: params[:name], content: params[:content])
 
     erb :index
@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
 
   get '/posts/:id' do
     @post = Post.find(params[:id])
-    binding.pry
+    #binding.pry
     erb :show
   end
 
